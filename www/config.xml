@@ -6,10 +6,10 @@
         id        = "com.arthur.first"
         version   = "1.0.0">
 
-    <name>First</name>
+    <name>Tamagochi</name>
 
     <description>
-        First mobile app - test.
+        I love Tamagochi.
     </description>
 
     <author href="http://phonegap.com" email="support@arthur.com">
