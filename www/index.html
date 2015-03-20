@@ -72,11 +72,10 @@ frame.on("ready", function() {
 	);
 	stage.addChild(vPages);
 
-		app.makeHotspots(hP,hPages);
+		//app.makeHotspots(hP,hPages);
 
 
-
-
+	
 
 
 	// put resizing code in here (scaling="full" only)
@@ -129,6 +128,10 @@ frame.on("ready", function() {
 	}// end of orientation
 	
 	orientate();
+	var thing = new zim.Rectangle(200,200,"red");
+		thing.x = 100;
+		thing.y = 100;	
+	stage.addChild(thing);
 
 	stage.update();	
 	
