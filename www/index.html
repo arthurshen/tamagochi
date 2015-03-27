@@ -8,8 +8,8 @@
 <!-- see http://zimjs.com/templates for more templates and meta tags -->
 
 <script>var zon = true; // true for comments from zim code</script>
-<script src="http://d309knd7es5f10.cloudfront.net/zim_1.4_min.js"></script><!-- take off _min to see code -->
-<script src="http://code.createjs.com/createjs-2014.12.12.min.js"></script> 
+<script src="js/createjs-2014.12.12.min.js"></script> 
+<script src="js/zim_1.4_min.js"></script><!-- take off _min to see code -->
 <!-- or can go to zimjs.com and createjs.com for individual modules -->
 
 <script src="js/view_h_v.js"></script>
@@ -76,9 +76,15 @@ frame.on("ready", function() {
 
 		//app.makeHotspots(hP,hPages);
 
-
+	vPages.on("page", setSpritePosition);
+	hPages.on("page", setSpritePosition);
 	
-
+	function setSpritePosition(){
+		hP.goodPumpkin.y = zim.rand(hP.goodPumpkin.getBounds().height/2, stageH-hP.goodPumpkin.getBounds().height/2);
+		hP.goodPumpkin.x = zim.rand(hP.goodPumpkin.getBounds().width/2, stageW-hP.goodPumpkin.getBounds().width/2);
+		vP.goodPumpkin.y = zim.rand(vP.goodPumpkin.getBounds().height/2, stageH-vP.goodPumpkin.getBounds().height/2);
+		vP.goodPumpkin.x = zim.rand(vP.goodPumpkin.getBounds().width/2, stageW-vP.goodPumpkin.getBounds().width/2);
+	}
 
 	// put resizing code in here (scaling="full" only)
 	frame.on("resize", function(e) {
@@ -87,6 +93,8 @@ frame.on("ready", function() {
 
 		zim.scaleTo(hP.info,stage,100,100,"both");
 		zim.scaleTo(vP.info,stage,100,100,"both");
+		zim.scaleTo(hP.rect,stage,100,100,"both");
+		zim.scaleTo(vP.rect,stage,100,100,"both");
 
 		hLayoutManager.resize();
 		vLayoutManager.resize();

@@ -14,12 +14,12 @@ var app = function(app) {
  		p.main.name = "main";	
  		p.main.setBounds(0,0,stageW,stageH);
 
- 		var rect = new zim.Rectangle(stageW, stageH, "orange");
- 		p.main.addChild(rect);
+ 		p.rect = new zim.Rectangle(stageW, stageH, "black");
+ 		p.main.addChild(p.rect);
 
 		var gData; 
 		var gSpritesheet;
-		var goodPumpkin;
+		p.goodPumpkin;
 
 		gData = {
 
@@ -28,25 +28,36 @@ var app = function(app) {
 
 				[2, 2, 40, 40],
 				[44, 2, 40, 40],
-				[86, 2, 40, 40]
+				[86, 2, 40, 40],
+				[128, 2, 40, 40],
+				[170, 2, 40, 40],
+				[212, 2, 40, 40],
+				[2, 44, 40, 40],
+				[44, 44, 40, 40],
+				[86, 44, 40, 40],
+				[128, 44, 40, 40],
+				[170, 44, 40, 40],
+				[212, 44, 40, 40],
+				
 			
 			],
 			"animations": {
-				"goodAnimation":[0,1,2],
-				"speed": 0.1
+				"goodAnimation":[0,1,2,3,4,5,6,7,8,9,10,11],
+				"speed": 0.1,
+				
 			},
-				"framerate": 1
+			"framerate": 1
 
 		};
 
 		gSpritesheet = new createjs.SpriteSheet(gData);
-		goodPumpkin = new createjs.Sprite(gSpritesheet,'goodAnimation');
-		goodPumpkin.regY = goodPumpkin.getBounds().height/2;
-		goodPumpkin.regX = goodPumpkin.getBounds().width/2;
-		goodPumpkin.y = 20;
-		goodPumpkin.x = 20;
+		p.goodPumpkin = new createjs.Sprite(gSpritesheet,'goodAnimation');
+		p.goodPumpkin.regY = p.goodPumpkin.getBounds().height/2;
+		p.goodPumpkin.regX = p.goodPumpkin.getBounds().width/2;
+		p.goodPumpkin.y = zim.rand(p.goodPumpkin.getBounds().height/2, stageH-p.goodPumpkin.getBounds().height/2);
+		p.goodPumpkin.x = zim.rand(p.goodPumpkin.getBounds().width/2, stageW-p.goodPumpkin.getBounds().width/2);
 
-		p.main.addChild(goodPumpkin);
+		p.main.addChild(p.goodPumpkin);
 
 		createjs.Ticker.addEventListener("tick", stage);
 		//createjs.Ticker.setFPS(1);
@@ -90,9 +101,51 @@ var app = function(app) {
 		
  		p.info = new createjs.Container();		
 		p.info.name = "info";		
-		var infoBacking = new createjs.Bitmap("images/art-auction.jpg");	
+		var infoBacking = new zim.Rectangle(stageW, stageH, "white");
 		infoBacking.setBounds(0,0,stageW,stageH);
 		p.info.addChild(infoBacking);
+
+		var gData; 
+		var gSpritesheet;
+		p.goodPumpkin;
+
+		gData = {
+
+			"images": ["images/pixel.jpg"],
+			"frames": [
+
+				[2, 2, 40, 40],
+				[44, 2, 40, 40],
+				[86, 2, 40, 40],
+				[128, 2, 40, 40],
+				[170, 2, 40, 40],
+				[212, 2, 40, 40],
+				[2, 44, 40, 40],
+				[44, 44, 40, 40],
+				[86, 44, 40, 40],
+				[128, 44, 40, 40],
+				[170, 44, 40, 40],
+				[212, 44, 40, 40],
+				
+			
+			],
+			"animations": {
+				"goodAnimation":[0,1,2,3,4,5,6,7,8,9,10,11],
+				"speed": 0.1,
+				
+			},
+			"framerate": 1
+
+		};
+
+		gSpritesheet = new createjs.SpriteSheet(gData);
+		p.goodPumpkin = new createjs.Sprite(gSpritesheet,'goodAnimation');
+		p.goodPumpkin.regY = p.goodPumpkin.getBounds().height/2;
+		p.goodPumpkin.regX = p.goodPumpkin.getBounds().width/2;
+		p.goodPumpkin.y = zim.rand(p.goodPumpkin.getBounds().height/2, stageH-p.goodPumpkin.getBounds().height/2);
+		p.goodPumpkin.x = zim.rand(p.goodPumpkin.getBounds().width/2, stageW-p.goodPumpkin.getBounds().width/2);
+
+		p.info.addChild(p.goodPumpkin);
 				
 		return p;
 		
@@ -108,12 +161,12 @@ var app = function(app) {
  		p.main.name = "main";	
  		p.main.setBounds(0,0,stageW,stageH);
 
- 		var rect = new zim.Rectangle(stageW, stageH, "orange");
- 		p.main.addChild(rect);
+ 		p.rect = new zim.Rectangle(stageW, stageH, "black");
+ 		p.main.addChild(p.rect);
  		
 		var gData; 
 		var gSpritesheet;
-		var goodPumpkin;
+		p.goodPumpkin;
 
 		gData = {
 
@@ -122,11 +175,21 @@ var app = function(app) {
 
 				[2, 2, 40, 40],
 				[44, 2, 40, 40],
-				[86, 2, 40, 40]
+				[86, 2, 40, 40],
+				[128, 2, 40, 40],
+				[170, 2, 40, 40],
+				[212, 2, 40, 40],
+				[2, 44, 40, 40],
+				[44, 44, 40, 40],
+				[86, 44, 40, 40],
+				[128, 44, 40, 40],
+				[170, 44, 40, 40],
+				[212, 44, 40, 40],
+				
 			
 			],
 			"animations": {
-				"goodAnimation":[0,1,2],
+				"goodAnimation":[0,1,2,3,4,5,6,7,8,9,10,11],
 				"speed": 0.1,
 				
 			},
@@ -135,13 +198,13 @@ var app = function(app) {
 		};
 
 		gSpritesheet = new createjs.SpriteSheet(gData);
-		goodPumpkin = new createjs.Sprite(gSpritesheet,'goodAnimation');
-		goodPumpkin.regY = goodPumpkin.getBounds().height/2;
-		goodPumpkin.regX = goodPumpkin.getBounds().width/2;
-		goodPumpkin.y = 20;
-		goodPumpkin.x = 20;
+		p.goodPumpkin = new createjs.Sprite(gSpritesheet,'goodAnimation');
+		p.goodPumpkin.regY = p.goodPumpkin.getBounds().height/2;
+		p.goodPumpkin.regX = p.goodPumpkin.getBounds().width/2;
+		p.goodPumpkin.y = zim.rand(p.goodPumpkin.getBounds().height/2, stageH-p.goodPumpkin.getBounds().height/2);
+		p.goodPumpkin.x = zim.rand(p.goodPumpkin.getBounds().width/2, stageW-p.goodPumpkin.getBounds().width/2);
 
-		p.main.addChild(goodPumpkin);
+		p.main.addChild(p.goodPumpkin);
 
 		createjs.Ticker.addEventListener("tick", stage);
 		//createjs.Ticker.setFPS(30);
@@ -179,9 +242,51 @@ var app = function(app) {
 		
 	 	p.info = new createjs.Container();		
 		p.info.name = "info";		
-		var infoBacking = new createjs.Bitmap("images/art-auction.jpg");	
+		var infoBacking = new zim.Rectangle(stageW, stageH, "white");
 		infoBacking.setBounds(0,0,stageW,stageH);
 		p.info.addChild(infoBacking);
+
+		var gData; 
+		var gSpritesheet;
+		p.goodPumpkin;
+
+		gData = {
+
+			"images": ["images/pixel.jpg"],
+			"frames": [
+
+				[2, 2, 40, 40],
+				[44, 2, 40, 40],
+				[86, 2, 40, 40],
+				[128, 2, 40, 40],
+				[170, 2, 40, 40],
+				[212, 2, 40, 40],
+				[2, 44, 40, 40],
+				[44, 44, 40, 40],
+				[86, 44, 40, 40],
+				[128, 44, 40, 40],
+				[170, 44, 40, 40],
+				[212, 44, 40, 40],
+				
+			
+			],
+			"animations": {
+				"goodAnimation":[0,1,2,3,4,5,6,7,8,9,10,11],
+				"speed": 0.1,
+				
+			},
+			"framerate": 1
+
+		};
+
+		gSpritesheet = new createjs.SpriteSheet(gData);
+		p.goodPumpkin = new createjs.Sprite(gSpritesheet,'goodAnimation');
+		p.goodPumpkin.regY = p.goodPumpkin.getBounds().height/2;
+		p.goodPumpkin.regX = p.goodPumpkin.getBounds().width/2;
+		p.goodPumpkin.y = zim.rand(p.goodPumpkin.getBounds().height/2, stageH-p.goodPumpkin.getBounds().height/2);
+		p.goodPumpkin.x = zim.rand(p.goodPumpkin.getBounds().width/2, stageW-p.goodPumpkin.getBounds().width/2);
+
+		p.info.addChild(p.goodPumpkin);
 				
 		return p;
 		
