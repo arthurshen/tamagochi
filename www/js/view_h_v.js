@@ -11,10 +11,11 @@ var app = function(app) {
  		p = {};
 		
  		p.main = new createjs.Container();
- 		p.main.name = "main";	
+ 		p.main.name = "main";
  		p.main.setBounds(0,0,stageW,stageH);
-
- 		p.rect = new zim.Rectangle(stageW, stageH, "black");
+		var w = (stageW > stageH) ? stageW : stageH;
+		var h = (stageH > stageW) ? stageH : stageW;
+ 		p.rect = new zim.Rectangle(w, h, "black");
  		p.main.addChild(p.rect);
 
 		var gData; 
@@ -62,9 +63,9 @@ var app = function(app) {
 		createjs.Ticker.addEventListener("tick", stage);
 		
  		p.info = new createjs.Container();		
-		p.info.name = "info";		
-		p.infoBacking = new zim.Rectangle(stageW, stageH, "white");
-		p.infoBacking.setBounds(0,0,stageW,stageH);
+		p.info.name = "info";
+		p.infoBacking = new zim.Rectangle(w, h, "white");
+		p.infoBacking.setBounds(0,0,w,h);
 		p.info.addChild(p.infoBacking);
 
 		p.goodPumpkin2;
@@ -120,8 +121,9 @@ var app = function(app) {
  		p.main = new createjs.Container();
  		p.main.name = "main";	
  		p.main.setBounds(0,0,stageW,stageH);
-
- 		p.rect = new zim.Rectangle(stageW, stageH, "black");
+ 		var w = (stageW > stageH) ? stageW : stageH;
+		var h = (stageH > stageW) ? stageH : stageW;
+ 		p.rect = new zim.Rectangle(w, h, "black");
  		p.main.addChild(p.rect);
  		
 		var gData; 
@@ -170,8 +172,8 @@ var app = function(app) {
 		
 	 	p.info = new createjs.Container();		
 		p.info.name = "info";		
-		p.infoBacking = new zim.Rectangle(stageW, stageH, "white");
-		p.infoBacking.setBounds(0,0,stageW,stageH);
+		p.infoBacking = new zim.Rectangle(w, h, "white");
+		p.infoBacking.setBounds(0,0,w,h);
 		p.info.addChild(p.infoBacking);
 
 		var gData; 
