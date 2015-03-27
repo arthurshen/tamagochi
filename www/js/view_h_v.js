@@ -13,7 +13,10 @@ var app = function(app) {
  		p.main = new createjs.Container();
  		p.main.name = "main";	
  		p.main.setBounds(0,0,stageW,stageH);
- 		
+
+ 		var rect = new zim.Rectangle(stageW, stageH, "orange");
+ 		p.main.addChild(rect);
+
 		var gData; 
 		var gSpritesheet;
 		var goodPumpkin;
@@ -29,8 +32,10 @@ var app = function(app) {
 			
 			],
 			"animations": {
-				"goodAnimation":[0,1,2]
-			}
+				"goodAnimation":[0,1,2],
+				"speed": 0.1
+			},
+				"framerate": 1
 
 		};
 
@@ -44,7 +49,7 @@ var app = function(app) {
 		p.main.addChild(goodPumpkin);
 
 		createjs.Ticker.addEventListener("tick", stage);
-		createjs.Ticker.setFPS(1);
+		//createjs.Ticker.setFPS(1);
 		
 		
 		// var logo = new zim.Rectangle(100, 100, "orange");	
@@ -102,6 +107,9 @@ var app = function(app) {
  		p.main = new createjs.Container();
  		p.main.name = "main";	
  		p.main.setBounds(0,0,stageW,stageH);
+
+ 		var rect = new zim.Rectangle(stageW, stageH, "orange");
+ 		p.main.addChild(rect);
  		
 		var gData; 
 		var gSpritesheet;
@@ -118,8 +126,11 @@ var app = function(app) {
 			
 			],
 			"animations": {
-				"goodAnimation":[0,1,2]
-			}
+				"goodAnimation":[0,1,2],
+				"speed": 0.1,
+				
+			},
+			"framerate": 1
 
 		};
 
@@ -133,7 +144,7 @@ var app = function(app) {
 		p.main.addChild(goodPumpkin);
 
 		createjs.Ticker.addEventListener("tick", stage);
-		createjs.Ticker.setFPS(1);
+		//createjs.Ticker.setFPS(30);
 		
 		// var logo = new zim.Rectangle(100, 100, "orange");	
 		// logo.setBounds(0,0,100,100);
