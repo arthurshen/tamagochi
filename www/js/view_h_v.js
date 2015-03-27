@@ -101,9 +101,9 @@ var app = function(app) {
 		
  		p.info = new createjs.Container();		
 		p.info.name = "info";		
-		var infoBacking = new zim.Rectangle(stageW, stageH, "white");
-		infoBacking.setBounds(0,0,stageW,stageH);
-		p.info.addChild(infoBacking);
+		p.infoBacking = new zim.Rectangle(stageW, stageH, "white");
+		p.infoBacking.setBounds(0,0,stageW,stageH);
+		p.info.addChild(p.infoBacking);
 
 		var gData; 
 		var gSpritesheet;
@@ -242,9 +242,9 @@ var app = function(app) {
 		
 	 	p.info = new createjs.Container();		
 		p.info.name = "info";		
-		var infoBacking = new zim.Rectangle(stageW, stageH, "white");
-		infoBacking.setBounds(0,0,stageW,stageH);
-		p.info.addChild(infoBacking);
+		p.infoBacking = new zim.Rectangle(stageW, stageH, "white");
+		p.infoBacking.setBounds(0,0,stageW,stageH);
+		p.info.addChild(p.infoBacking);
 
 		var gData; 
 		var gSpritesheet;
