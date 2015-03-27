@@ -79,11 +79,20 @@ frame.on("ready", function() {
 	vPages.on("page", setSpritePosition);
 	hPages.on("page", setSpritePosition);
 	
-	function setSpritePosition(){
-		hP.goodPumpkin.y = zim.rand(hP.goodPumpkin.getBounds().height/2, stageH-hP.goodPumpkin.getBounds().height/2);
-		hP.goodPumpkin.x = zim.rand(hP.goodPumpkin.getBounds().width/2, stageW-hP.goodPumpkin.getBounds().width/2);
-		vP.goodPumpkin.y = zim.rand(vP.goodPumpkin.getBounds().height/2, stageH-vP.goodPumpkin.getBounds().height/2);
-		vP.goodPumpkin.x = zim.rand(vP.goodPumpkin.getBounds().width/2, stageW-vP.goodPumpkin.getBounds().width/2);
+	function setSpritePosition(e){
+		if (e.target.page == hP.main) {
+			hP.goodPumpkin2.y = zim.rand(hP.goodPumpkin2.getBounds().height/2, stageH-hP.goodPumpkin2.getBounds().height/2);
+			hP.goodPumpkin2.x = zim.rand(hP.goodPumpkin2.getBounds().width/2, stageW-hP.goodPumpkin2.getBounds().width/2);
+		} else if (e.target.page == hP.info) {
+			hP.goodPumpkin.y = zim.rand(hP.goodPumpkin.getBounds().height/2, stageH-hP.goodPumpkin.getBounds().height/2);
+			hP.goodPumpkin.x = zim.rand(hP.goodPumpkin.getBounds().width/2, stageW-hP.goodPumpkin.getBounds().width/2);
+		} else if (e.target.page == vP.main) {
+			vP.goodPumpkin2.y = zim.rand(vP.goodPumpkin2.getBounds().height/2, stageH-vP.goodPumpkin2.getBounds().height/2);
+			vP.goodPumpkin2.x = zim.rand(vP.goodPumpkin2.getBounds().width/2, stageW-vP.goodPumpkin2.getBounds().width/2);
+		} else if (e.target.page == vP.info) {
+			vP.goodPumpkin.y = zim.rand(vP.goodPumpkin.getBounds().height/2, stageH-vP.goodPumpkin.getBounds().height/2);
+			vP.goodPumpkin.x = zim.rand(vP.goodPumpkin.getBounds().width/2, stageW-vP.goodPumpkin.getBounds().width/2);
+		}
 	}
 
 	// put resizing code in here (scaling="full" only)
@@ -93,8 +102,8 @@ frame.on("ready", function() {
 
 		zim.scaleTo(hP.rect,stage,100,100,"both");
 		zim.scaleTo(vP.rect,stage,100,100,"both");
-		zim.scaleTo(hP.rect,stage,100,100,"both");
-		zim.scaleTo(vP.rect,stage,100,100,"both");
+		zim.scaleTo(hP.infoBacking,stage,100,100,"both");
+		zim.scaleTo(vP.infoBacking,stage,100,100,"both");
 
 		hLayoutManager.resize();
 		vLayoutManager.resize();

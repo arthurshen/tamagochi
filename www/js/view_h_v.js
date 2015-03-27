@@ -105,9 +105,7 @@ var app = function(app) {
 		p.infoBacking.setBounds(0,0,stageW,stageH);
 		p.info.addChild(p.infoBacking);
 
-		var gData; 
-		var gSpritesheet;
-		p.goodPumpkin;
+		p.goodPumpkin2;
 
 		gData = {
 
@@ -139,13 +137,13 @@ var app = function(app) {
 		};
 
 		gSpritesheet = new createjs.SpriteSheet(gData);
-		p.goodPumpkin = new createjs.Sprite(gSpritesheet,'goodAnimation');
-		p.goodPumpkin.regY = p.goodPumpkin.getBounds().height/2;
-		p.goodPumpkin.regX = p.goodPumpkin.getBounds().width/2;
-		p.goodPumpkin.y = zim.rand(p.goodPumpkin.getBounds().height/2, stageH-p.goodPumpkin.getBounds().height/2);
-		p.goodPumpkin.x = zim.rand(p.goodPumpkin.getBounds().width/2, stageW-p.goodPumpkin.getBounds().width/2);
+		p.goodPumpkin2 = new createjs.Sprite(gSpritesheet,'goodAnimation');
+		p.goodPumpkin2.regY = p.goodPumpkin2.getBounds().height/2;
+		p.goodPumpkin2.regX = p.goodPumpkin2.getBounds().width/2;
+		p.goodPumpkin2.y = zim.rand(p.goodPumpkin2.getBounds().height/2, stageH-p.goodPumpkin2.getBounds().height/2);
+		p.goodPumpkin2.x = zim.rand(p.goodPumpkin2.getBounds().width/2, stageW-p.goodPumpkin2.getBounds().width/2);
 
-		p.info.addChild(p.goodPumpkin);
+		p.info.addChild(p.goodPumpkin2);
 				
 		return p;
 		
