@@ -42,6 +42,9 @@ var app = function(app) {
 		goodPumpkin.x = 20;
 
 		p.main.addChild(goodPumpkin);
+
+		createjs.Ticker.addEventListener("tick", stage);
+		createjs.Ticker.setFPS(1);
 		
 		
 		// var logo = new zim.Rectangle(100, 100, "orange");	
@@ -54,7 +57,7 @@ var app = function(app) {
 		// thing.x = 100;
 		// thing.y = 100;		
 		// content.addChild(thing);
-		//p.main.addChild(content);
+		// p.main.addChild(content);
 		
 		// var related = new zim.Rectangle(200, 500, "pink");	
 		// related.setBounds(0,0,200,500);
@@ -128,6 +131,9 @@ var app = function(app) {
 		goodPumpkin.x = 20;
 
 		p.main.addChild(goodPumpkin);
+
+		createjs.Ticker.addEventListener("tick", stage);
+		createjs.Ticker.setFPS(1);
 		
 		// var logo = new zim.Rectangle(100, 100, "orange");	
 		// logo.setBounds(0,0,100,100);

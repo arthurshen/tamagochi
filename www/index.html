@@ -64,13 +64,13 @@ frame.on("ready", function() {
 			{page:hP.main, swipe:[hP.info, hP.info, null, null]},
 			{page:hP.info, swipe:[hP.main, hP.main, null, null]}
 		],"slide",100
-		);
+	);
 		// stage.addChild(hPages);
 
 	var vPages = new zim.Pages(stage,[
-		{page:vP.main,  swipe:[null, null, vP.info, vP.info]},
-		{page:vP.info,  swipe:[null, null, vP.main, vP.main]}
-	], "slide", 500
+			{page:vP.main,  swipe:[null, null, vP.info, vP.info]},
+			{page:vP.info,  swipe:[null, null, vP.main, vP.main]}
+		], "slide", 500
 	);
 	stage.addChild(vPages);
 
@@ -100,32 +100,32 @@ frame.on("ready", function() {
 	// put orientation change code in here
 	frame.on("orientation", orientate);
 
-		function orientate(e){
+	function orientate(e){
 
-			console.log(frame.orientation);
+		console.log(frame.orientation);
 
-			if(frame.orientation == "horizontal"){
+		if(frame.orientation == "horizontal"){
 
-				hPages.go(hP[vPages.page.name], null, "none");
+			hPages.go(hP[vPages.page.name], null, "none");
 
-				stage.addChild(hPages);
-				hPages.enable();
-				hLayoutManager.enable();
-				stage.removeChild(vPages);
-				vPages.disable();
-				vLayoutManager.disable();
+			stage.addChild(hPages);
+			hPages.enable();
+			hLayoutManager.enable();
+			stage.removeChild(vPages);
+			vPages.disable();
+			vLayoutManager.disable();
 
-			}else{
+		}else{
 
-				vPages.go(vP[hPages.page.name], null, "none");
+			vPages.go(vP[hPages.page.name], null, "none");
 
-				stage.addChild(vPages);
-				vPages.enable();
-				vLayoutManager.enable();
-				stage.removeChild(hPages);
-				hPages.disable();
-				hLayoutManager.disable();
-			}
+			stage.addChild(vPages);
+			vPages.enable();
+			vLayoutManager.enable();
+			stage.removeChild(hPages);
+			hPages.disable();
+			hLayoutManager.disable();
+		}
 		stage.update();
 	}// end of orientation
 	
@@ -135,9 +135,9 @@ frame.on("ready", function() {
 		thing.y = 100;	
 	//stage.addChild(thing);
 
-	createjs.Ticker.addEventListener("tick", stage);
-	createjs.Ticker.setFPS(1);
-	//stage.update();	
+	//createjs.Ticker.addEventListener("tick", stage);
+	//createjs.Ticker.setFPS(1);
+	stage.update();	
 	
 }); // end of ready
 
