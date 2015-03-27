@@ -10,9 +10,39 @@ var app = function(app) {
 		
  		p = {};
 		
- 		p.main = new zim.Rectangle(stageW, stageH, "orange");
+ 		p.main = new createjs.Container();
  		p.main.name = "main";	
  		p.main.setBounds(0,0,stageW,stageH);
+ 		
+		var gData; 
+		var gSpritesheet;
+		var goodPumpkin;
+
+		gData = {
+
+			"images": ["images/pixel.jpg"],
+			"frames": [
+
+				[2, 2, 40, 40],
+				[44, 2, 40, 40],
+				[86, 2, 40, 40]
+			
+			],
+			"animations": {
+				"goodAnimation":[0,1,2]
+			}
+
+		};
+
+		gSpritesheet = new createjs.SpriteSheet(gData);
+		goodPumpkin = new createjs.Sprite(gSpritesheet,'goodAnimation');
+		goodPumpkin.regY = goodPumpkin.getBounds().height/2;
+		goodPumpkin.regX = goodPumpkin.getBounds().width/2;
+		goodPumpkin.y = 20;
+		goodPumpkin.x = 20;
+
+		p.main.addChild(goodPumpkin);
+		
 		
 		// var logo = new zim.Rectangle(100, 100, "orange");	
 		// logo.setBounds(0,0,100,100);
@@ -66,9 +96,38 @@ var app = function(app) {
 		
 		p = {};
 		
-	 	p.main = new zim.Rectangle(stageW, stageH, "orange");
-		p.main.name = "main";	
-		p.main.setBounds(0,0,stageW,stageH);
+ 		p.main = new createjs.Container();
+ 		p.main.name = "main";	
+ 		p.main.setBounds(0,0,stageW,stageH);
+ 		
+		var gData; 
+		var gSpritesheet;
+		var goodPumpkin;
+
+		gData = {
+
+			"images": ["images/pixel.jpg"],
+			"frames": [
+
+				[2, 2, 40, 40],
+				[44, 2, 40, 40],
+				[86, 2, 40, 40]
+			
+			],
+			"animations": {
+				"goodAnimation":[0,1,2]
+			}
+
+		};
+
+		gSpritesheet = new createjs.SpriteSheet(gData);
+		goodPumpkin = new createjs.Sprite(gSpritesheet,'goodAnimation');
+		goodPumpkin.regY = goodPumpkin.getBounds().height/2;
+		goodPumpkin.regX = goodPumpkin.getBounds().width/2;
+		goodPumpkin.y = 20;
+		goodPumpkin.x = 20;
+
+		p.main.addChild(goodPumpkin);
 		
 		// var logo = new zim.Rectangle(100, 100, "orange");	
 		// logo.setBounds(0,0,100,100);
