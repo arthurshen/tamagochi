@@ -123,7 +123,7 @@ var app = function(app) {
  		p.main.setBounds(0,0,stageW,stageH);
  		var w = (stageW > stageH) ? stageW : stageH;
 		var h = (stageH > stageW) ? stageH : stageW;
- 		p.rect = new zim.Rectangle(w, h, "black");
+ 		p.rect = new zim.Rectangle(h, w, "black");
  		p.main.addChild(p.rect);
  		
 		var gData; 
@@ -172,8 +172,8 @@ var app = function(app) {
 		
 	 	p.info = new createjs.Container();		
 		p.info.name = "info";		
-		p.infoBacking = new zim.Rectangle(w, h, "white");
-		p.infoBacking.setBounds(0,0,w,h);
+		p.infoBacking = new zim.Rectangle(h, w, "white");
+		p.infoBacking.setBounds(0,0,h,w);
 		p.info.addChild(p.infoBacking);
 
 		var gData; 
